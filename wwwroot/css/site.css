@@ -19,4 +19,22 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: #ffffff;
+}
+
+/* Student Registration System: clean cards and readable forms. */
+.card {
+  border-radius: 0.75rem;
+}
+
+.form-label {
+  font-weight: 600;
+}
+
+.field-validation-error {
+  font-size: 0.875rem;
+}
+
+.table thead th {
+  font-weight: 600;
 }

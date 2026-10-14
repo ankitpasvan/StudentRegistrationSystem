@@ -1,7 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using StudentRegistrationSystem.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Register the database context. The connection string is read from
+// appsettings.json -> "ConnectionStrings:DefaultConnection", so no
+// password or server name is hardcoded here.
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
